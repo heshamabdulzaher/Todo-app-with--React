@@ -71,9 +71,6 @@ export class Todos extends React.Component {
         // update db
         fetch('http://localhost:3001/todos/' + id, {
             method: 'DELETE'
-            // headers: {
-            //     'Content-Type': 'application/json'
-            // },
         });
     };
 
