@@ -27,17 +27,6 @@ const TodoItemStyles = styled.li`
 `;
 
 class TodoItem extends Component {
-  constructor(props) {
-    super(props);
-    this.eventHandler = this.eventHandler.bind(this);
-    this.state = { completed: this.props.todo.completed };
-  }
-  eventHandler(e) {
-    let completed = this.props.todo.completed
-      ? (this.props.todo.completed = false)
-      : (this.props.todo.completed = true);
-    this.setState({ completed: this.props.todo.completed });
-  }
   render() {
     console.log();
     return (
@@ -49,7 +38,6 @@ class TodoItem extends Component {
           <input
             type="checkbox"
             checked={this.state.completed}
-            onChange={this.eventHandler}
             id={this.props.todo.id}
           />
           {this.props.todo.title}

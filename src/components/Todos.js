@@ -28,17 +28,6 @@ export class Todos extends React.Component {
   }
 }
 
-// const todosContainer = {
-//     padding: '30px'
-// }
-// const todosList = {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//     justifyContent: 'space-between',
-//     padding: '20px 0'
-// }
-
-// PropTypes
 Todos.propTypes = {
   todos: PropTypes.array.isRequired
 };
