@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "title": "Hello",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "title": "Lorem Title #2",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "title": "Lorem Title #3",
+      "completed": false,
+      "id": 3
+    }
+  ]
+}
