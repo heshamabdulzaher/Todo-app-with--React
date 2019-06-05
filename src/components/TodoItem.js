@@ -86,9 +86,7 @@ class TodoItem extends Component {
   };
 
   remove = () => {
-    // console.log(this.props.todo);
-    this.props.deleteTodoItem(this.props.todo.id);
-    // this.props.deleteTodoItem();
+    this.props.removeTodoItem(this.props.todo.id);
   };
 
   render() {

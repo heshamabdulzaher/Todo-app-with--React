@@ -62,7 +62,7 @@ export class Todos extends React.Component {
     }
   };
 
-  deleteTodoItem = id => {
+  removeTodoItem = id => {
     let updatedTodos = this.state.todos.filter(todo => {
       if (todo.id === id) return false;
       return true;
@@ -83,7 +83,7 @@ export class Todos extends React.Component {
               todo={todo}
               key={todo.id}
               updateSingleTodo={this.updateSingleTodo}
-              deleteTodoItem={this.deleteTodoItem}
+              removeTodoItem={this.removeTodoItem}
             />
           ))}
         </ul>
@@ -95,9 +95,5 @@ export class Todos extends React.Component {
     );
   }
 }
-
-// Todos.propTypes = {
-//   todos: PropTypes.array.isRequired
-// };
 
 export default Todos;
