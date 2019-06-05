@@ -62,7 +62,7 @@ class TodoItem extends Component {
     this.setState({ titleText: this.props.todo.title });
   }
 
-  handleChangeEvent = async e => {
+  updateMyInfo = async e => {
     if (e.target.getAttribute("type") === "text") {
       await this.setState({ titleText: e.target.value });
       await this.props.updateSingleTodo(
@@ -85,22 +85,28 @@ class TodoItem extends Component {
     }
   };
 
+  remove = () => {
+    // console.log(this.props.todo);
+    this.props.deleteTodoItem(this.props.todo.id);
+    // this.props.deleteTodoItem();
+  };
+
   render() {
     return (
       <TodoItemStyles>
         <input
           type="checkbox"
           checked={this.props.todo.completed}
-          onChange={this.handleChangeEvent}
+          onChange={this.updateMyInfo}
         />
         <input
           type="text"
           className={this.props.todo.completed ? "completed" : ""}
           value={this.state.titleText}
-          onChange={this.handleChangeEvent}
+          onChange={this.updateMyInfo}
           onKeyPress={this.handleKeyPress}
         />
-        <div className="delete_icon">
+        <div className="delete_icon" onClick={this.remove}>
           <img src={deleteIcon} alt="delete icon" />
         </div>
       </TodoItemStyles>

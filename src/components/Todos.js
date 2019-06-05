@@ -52,7 +52,7 @@ export class Todos extends React.Component {
     // If DB updated
     if (patchTodos.status >= 200 || patchTodos.status < 300) {
       // Update changes locally
-      const updatedTodos = this.state.todos.map(todo => {
+      let updatedTodos = this.state.todos.map(todo => {
         if (todo.id === id) {
           todo[key] = newValue;
         }
@@ -60,6 +60,17 @@ export class Todos extends React.Component {
       });
       this.setState({ todos: updatedTodos });
     }
+  };
+
+  deleteTodoItem = id => {
+    let updatedTodos = this.state.todos.filter(todo => {
+      if (todo.id === id) return false;
+      return true;
+    });
+    this.setState({ todos: updatedTodos });
+    fetch("http://localhost:4000/todos/" + id, {
+      method: "DELETE"
+    });
   };
 
   render() {
@@ -72,6 +83,7 @@ export class Todos extends React.Component {
               todo={todo}
               key={todo.id}
               updateSingleTodo={this.updateSingleTodo}
+              deleteTodoItem={this.deleteTodoItem}
             />
           ))}
         </ul>

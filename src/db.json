@@ -1,18 +1,13 @@
 {
   "todos": [
     {
-      "title": "Hello",
+      "title": "Build",
       "completed": false,
       "id": 1
     },
     {
-      "title": "Lorem Title #2",
-      "completed": false,
-      "id": 2
-    },
-    {
-      "title": "Lorem Title #3",
-      "completed": false,
+      "title": "Draw sketch",
+      "completed": true,
       "id": 3
     }
   ]
