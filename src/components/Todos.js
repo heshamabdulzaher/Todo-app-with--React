@@ -5,17 +5,22 @@ import AddNewTask from "./AddNewTask";
 
 const TodosContainer = styled.div`
   width: 600px;
+  max-width: 90%;
   margin: 50px auto;
   padding: 24px 0 0;
   border-radius: 6px;
   background-color: #fff;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  p {
-    color: #333;
+  q {
+    color: #868e96;
     font-size: 15px;
+    word-spacing: 2px;
     font-weight: 500;
     text-align: center;
-    padding: 15px 0;
+    padding: 15px 10px;
+    display: block;
+    line-height: 27px;
+    font-style: italic;
   }
 `;
 
@@ -87,10 +92,10 @@ export class Todos extends React.Component {
             />
           ))}
         </ul>
-        <p>
+        <q>
           If you spend too much time thinking about a thing, you'll never get it
           done.
-        </p>
+        </q>
       </TodosContainer>
     );
   }
